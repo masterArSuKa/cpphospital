@@ -1,24 +1,28 @@
 <?php
 
-require_once "./env.php";
-
 class Database
 {
-    private $host = DB_HOST;
-    private $db_name = DB_NAME;
-    private $user = DB_USER;
-    private $pass = DB_PASSWORD;
-    private $conn;
+    private $server = "mysql:host=hospital.cqn8jr4zs6zp.us-east-1.rds.amazonaws.com;dbname=hospital";
 
-    public function connect()
-    {
-        $this->conn = null;
-        try {
-            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->user;$this->user,$this->pass");
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $error) {
-            $error->getMessage();
-        }
+    private $username = "admin";
+
+    private $password = "12345678";
+
+    private $options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,);
+
+    protected $conn;
+
+    public function connect(){
+    try{
+        $this->conn = new PDO($this->server, $this->username, $this->password, $this->options);​​
+        return $this->conn;
+    }​​
+    catch (PDOException $e){​​
+
+            echo "There is some problem in connection: " . $e->getMessage();
+
+        }​​
         return $this->conn;
     }
 }
+?>
