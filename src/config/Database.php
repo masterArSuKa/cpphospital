@@ -5,9 +5,9 @@ require_once "./env.php";
 class Database
 {
     private $host = DB_HOST;
-    private $db_name = DB_NAME;
-    private $user = DB_USER;
-    private $pass = DB_PASSWORD;
+    private $db_name = "hospital";
+    private $user = "admin";
+    private $pass = "12345678";
     private $conn;
 
     public function connect()
