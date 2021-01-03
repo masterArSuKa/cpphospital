@@ -1,5 +1,5 @@
 <?php
-$con = mysql_connect('localhost','root','');
+$con = mysql_connect('hospital.cqn8jr4zs6zp.us-east-1.rds.amazonaws.com','admin','12345678');
 if (empty($con)) {
  	echo mysql_error();
  } 
