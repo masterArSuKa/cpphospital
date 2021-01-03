@@ -4,7 +4,7 @@ require_once "./env.php";
 
 class Database
 {
-    private $host = DB_HOST;
+    private $host = "hospital.cqn8jr4zs6zp.us-east-1.rds.amazonaws.com";
     private $db_name = "hospital";
     private $user = "admin";
     private $pass = "12345678";
