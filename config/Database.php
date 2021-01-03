@@ -1,13 +1,13 @@
 <?php
 
-require_once "./env.php";
+require_once "env.php";
 
 class Database
 {
-    private $host = "hospital.cqn8jr4zs6zp.us-east-1.rds.amazonaws.com";
-    private $db_name = "hospital";
-    private $user = "admin";
-    private $pass = "12345678";
+    private $host = DB_HOST;
+    private $db_name = DB_NAME;
+    private $user = DB_USER;
+    private $pass = DB_PASSWORD;
     private $conn;
 
     public function connect()
